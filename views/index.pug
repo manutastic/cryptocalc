@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .container
+    h1= title
+    p Convert between BTC and USD with the latest prices.
+    fieldset
+      form(action='/', method='post')
+        input#btc(name='btc', type='text', placeholder='BTC', onkeyup='updateUSD()')
+        input#usd(name='usd', type='text', placeholder='USD', onkeyup='updateBTC()')
+        // input(type='submit', value='Convert')
+    
+    p Current BTC:USD Price: 
+    span#btc-price= BTCprice
+
+  script(src='/javascripts/conversions.js')
